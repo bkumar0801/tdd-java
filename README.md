@@ -25,7 +25,7 @@ public class LinkListTest {
     }
 }
 ```
-Once you have written your first test case in any IDE, you would see three red code snippets (in short, the code is in non-compilable state).
+Once you have written your first test case in any IDE, you would see three red symbols (in short, the code is in non-compilable state).
 
 First red : `Linklist`
 Second red : `Linklist()`
@@ -76,4 +76,20 @@ public class Node {
     }
 }
 ```
-
+#### Test Case – 3 
+```
+public class LinkListTest {
+    @Test
+    public void shouldTestLinkedListHasASingleNode() {
+        LinkList linkList = new LinkList();
+	    assertEquals(true, linkList.isEmpty());
+        linkList.Append(10);
+        assertEquals(false, linkList.isEmpty());
+        assertNotEquals(null, linkList.head);
+        assertEquals(10, linkList.head.info);
+        assertEquals(null, linkList.head.next);
+    }
+}
+```
+Let's understand the test first: 
+Four more red symbols : `Append`, `head`, `info` and `next`.
