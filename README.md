@@ -25,11 +25,14 @@ public class LinkListTest {
     }
 }
 ```
-When you'll write first test case in any IDE, you would see three red code snippet (in short, its in non-compilable state).
+Once you have written your first test case in any IDE, you would see three red code snippets (in short, the code is in non-compilable state).
+
 First red : `Linklist`
 Second red : `Linklist()`
 Third red: `isEmpty()`
-Because we have no implementation yet : there is no class `Linklist` and method `isEmpty()` exist. In order, to compile the test written, you would have to introduce minimum code which would make the above code compilable and test passed.
+
+The reason is very simple, we have no implementation yet : there is no class `Linklist` and method `isEmpty()`. You would have to introduce minimum code which would make the above code compilable and test passed.
+
 #### Evolved code:
 ```
 public class LinkList {
