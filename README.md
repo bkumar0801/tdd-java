@@ -82,7 +82,7 @@ public class LinkListTest {
     @Test
     public void shouldTestLinkedListHasASingleNode() {
         LinkList linkList = new LinkList();
-	    assertEquals(true, linkList.isEmpty());
+	assertEquals(true, linkList.isEmpty());
         linkList.Append(10);
         assertEquals(false, linkList.isEmpty());
         assertNotEquals(null, linkList.head);
@@ -92,4 +92,9 @@ public class LinkListTest {
 }
 ```
 Let's understand the test first: 
+- First assert is `assertEquals(true, linkList.isEmpty())` : initially linklist is empty
+- Then add one node using `Append` method. Here symbol `Append` is in red as no such method exist in class `LinkList`
+- After adding a node, LinkList should not be empty, so second assert `assertEquals(false, linkList.isEmpty())`
+- We know that in Singly Linklist we have a `head` pointer which always points to the first node. So the next assert (head shouldn't be null): `assertNotEquals(null, linkList.head)`. Since there is no such symbol `head` is present, this will be unresolved or in red
+- 
 Four more red symbols : `Append`, `head`, `info` and `next`.
