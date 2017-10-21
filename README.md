@@ -58,10 +58,9 @@ Again two more symbols are red : `Node` and `CreateNode()`. Let's introduce mini
    - Another class `Node` and
    - `CreateNode` method in `LinkList` class with a parameter of `int` type 
    
-These things are very clear from the test case. Also, to make the test pass `CreateNode(int info)` should return a valid `Node` object.
+These informations are very clear from the written test case. The test is `assertNotEquals(null, actual)`, it means, to make this test pass `CreateNode(int info)` should just return a valid `Node` object, and that's enough.
 
 #### Evolved code
-
 ```
 public class LinkList {
     public boolean isEmpty() {
