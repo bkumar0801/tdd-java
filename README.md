@@ -41,5 +41,40 @@ public class LinkList {
     }
 }
 ```
+> Skill to identify tests are crucial and key to be a successful XP engineer
 
+#### Test Case - 2
+```
+public class LinkListTest {
+    @Test
+    public void shouldTestNodeCreatedSuccessfully() {
+        LinkList linkList = new LinkList();
+        Node actual = linkList.CreateNode(10);
+        assertNotEquals(null, actual);
+    }
+}
+```
+Again two more symbols are red : `Node` and `CreateNode()`. Let's introduce minimum code to resolve these symbols : 
+   - Another class `Node` and
+   - `CreateNode` method in `LinkList` class with a parameter of `int` type 
+   
+These things are very clear from the test case. Also, to make the test pass `CreateNode(int info)` should return a valid `Node` object.
+
+#### Evolved code
+
+```
+public class LinkList {
+    public boolean isEmpty() {
+        return true;
+    }
+    public Node CreateNode(int info) {
+        return new Node(info);
+    }
+}
+
+public class Node {
+    public Node(int info) {
+    }
+}
+```
 
