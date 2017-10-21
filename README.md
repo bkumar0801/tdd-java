@@ -5,7 +5,6 @@
 > Its an approach where programmer must first write a failing unit test even without an implementation. Then, write just enough code to make that test pass. Once the test is passed, if needed programmer may refactor code to improve design or behavior.
 
 ### Advantages of TDD
-- Developing with TDD has valuable advantages:
 - You have a better understanding of a feature you implement
 - You have robust indicators of feature completeness
 - Low maintenance cost
@@ -23,6 +22,19 @@ public class LinkListTest {
     public void shouldTestEmptyLinkList() {
         LinkList linkList = new LinkList();
         assertEquals(true, linkList.isEmpty());
+    }
+}
+```
+When you'll write first test case in any IDE, you would see three red code snippet (in short, its in non-compilable state).
+First red : `Linklist`
+Second red : `Linklist()`
+Third red: `isEmpty()`
+Because we have no implementation yet : there is no class `Linklist` and method `isEmpty()` exist. In order, to compile the test written, you would have to introduce minimum code which would make the above code compilable and test passed.
+#### Evolved code:
+```
+public class LinkList {
+    public boolean isEmpty() {
+        return true;
     }
 }
 ```
