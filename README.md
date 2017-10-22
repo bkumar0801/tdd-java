@@ -80,7 +80,7 @@ public class Node {
 ```
 public class LinkListTest {
     @Test
-    public void shouldTestLinkedListHasASingleNode() {
+    public void shouldTestLinkedListAppendASingleNode() {
         LinkList linkList = new LinkList();
 	assertEquals(true, linkList.isEmpty());
         linkList.Append(10);
@@ -96,5 +96,31 @@ Let's understand the test first:
 - Then add one node using `Append` method. Here symbol `Append` is in red as no such method exist in class `LinkList`
 - After adding a node, LinkList should not be empty, so second assert `assertEquals(false, linkList.isEmpty())`
 - We know that in Singly Linklist we have a `head` pointer which always points to the first node. So the next assert (head shouldn't be null): `assertNotEquals(null, linkList.head)`. Since there is no such symbol `head` is present, this will be unresolved or in red
-- 
-Four more red symbols : `Append`, `head`, `info` and `next`.
+- We would also like to test, if the information is stored in the node. `assertEquals(10, linkList.head.info)` should ensure that information is stored in the node. But symbol `info` will is unresolved now.
+- Finally, if linklist has only one node, first node's next should not point to other node. This will ensure there is only one node present : `assertEquals(null, linkList.head.next)`. Again, symbol `next` is unresolved.
+
+Test case 3 has four more red or unresolved symbols : `Append`, `head`, `info` and `next`. Let's first resolve symbols by introducing them in the code : write `Append` method in `LinkList` class, `head` data member of `Node` type in the same class, `info` and `next` data members in `Node` class. 
+
+#### Evolved Code
+```
+public class LinkList {
+    public Node head;
+    public boolean isEmpty() {
+        return true;
+    }
+    public Node CreateNode(int info) {
+        return new Node(info);
+    }
+    public void Append(int info) {
+    }
+}
+
+public class Node {
+    public int info;
+    public Node next;
+    public Node(int info) {
+    }
+}
+```
+
+Now, let's run this test.
