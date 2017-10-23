@@ -124,3 +124,16 @@ public class Node {
 ```
 
 Now, let's run this test.
+Second test `assertEquals(false, linkList.isEmpty())` would fail. Let's look at the implementation of `isEmpty()`. 
+```
+public boolean isEmpty() {
+        return true;
+}
+```
+The reason for failure is, it always returns `true`. But our expectation is, when we `Append` a node, it should return `false` instead of `true` everytime. That means, we feel to refactor `isEmpty()` method.
+Since this depends upon `Append`, so, empty check should be based on head pointer which points to first node in singly linkedlist. If head is null, it means, linkedlist is empty else its not.
+```
+public boolean isEmpty() {
+        return head == null;
+}
+```
